@@ -5,6 +5,7 @@
   <title>AR Lernstation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- A-Frame & AR.js -->
   <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
@@ -31,25 +32,16 @@
   <!-- Marker -->
   <a-marker preset="hiro">
 
-    <!-- Klick-Button -->
-    <a-plane
+    <!-- Button als a-link für mobile Stabilität -->
+    <a-link
+      href="https://DEIN-LINK-HIER"
+      title="▶ Medium &ouml;ffnen"
       position="0 0.5 0"
       rotation="-90 0 0"
-      width="1.6"
-      height="0.6"
+      scale="1.6 0.6 1"
       color="#1976D2"
-      class="clickable"
-      onclick="window.open('https://DEIN-LINK-HIER', '_blank')">
-
-      <a-text
-        value="▶ Medium &ouml;ffnen"
-        align="center"
-        color="white"
-        width="3"
-        position="0 0 0.1">
-      </a-text>
-
-    </a-plane>
+      font-color="#ffffff">
+    </a-link>
 
   </a-marker>
 
@@ -57,10 +49,8 @@
 </a-scene>
 
 <div id="hinweis">
-  📷 Marker scannen → Button antippen
+  📷 Marker scannen → Button antippen → Medium öffnet sich in neuem Tab
 </div>
 
 </body>
 </html>
-
-
