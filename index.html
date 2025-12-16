@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <title>AR Lernstation – Test</title>
+  <title>AR Lernstation – YouTube Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
@@ -28,17 +28,18 @@
   arjs="sourceType: webcam; debugUIEnabled: false;"
   vr-mode-ui="enabled: false">
 
-  <!-- Marker -->
+  <!-- HIRO Marker -->
   <a-marker preset="hiro">
-
-    <!-- Button als interaktives Entity -->
-    <a-entity id="buttonEntity" position="0 0.6 0" rotation="-90 0 0">
-      <a-plane
-        width="0.6"
-        height="0.2"
-        color="#1976D2"
-        geometry="primitive: plane; width: 0.6; height: 0.2">
-      </a-plane>
+    <!-- Mobil-optimierter Button -->
+    <a-plane
+      id="buttonEntity"
+      position="0 0.6 0"
+      rotation="-90 0 0"
+      width="0.6"
+      height="0.2"
+      color="#1976D2"
+      class="clickable"
+      geometry="primitive: plane; width: 0.6; height: 0.2">
 
       <a-text
         value="Klick"
@@ -47,25 +48,29 @@
         width="1.5"
         position="0 0 0.05">
       </a-text>
-    </a-entity>
-
+    </a-plane>
   </a-marker>
 
   <a-entity camera></a-entity>
 </a-scene>
 
 <div id="hinweis">
-  📷 Marker scannen → Button antippen → Medium öffnet sich in neuem Tab
+  📷 Marker scannen → Button antippen → YouTube öffnet sich in neuem Tab
 </div>
 
 <script>
-  // Sicherstellen, dass Touch auf mobilen Geräten erkannt wird
   const button = document.getElementById('buttonEntity');
+
+  // Mobile Touch Event
+  button.addEventListener('touchstart', () => {
+    window.open('https://youtu.be/ABCDEFG1234', '_blank');
+  });
+
+  // Desktop Fallback
   button.addEventListener('click', () => {
-    window.open('https://www.youtube.com/watch?v=K7PrbjIkZFg', '_blank');
+    window.open('https://youtu.be/ABCDEFG1234', '_blank');
   });
 </script>
 
 </body>
 </html>
-
