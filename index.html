@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>AR Lernstation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+    #hinweis {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+<a-scene
+  embedded
+  arjs="sourceType: webcam; debugUIEnabled: false;"
+  vr-mode-ui="enabled: false">
+
+  <!-- Marker -->
+  <a-marker preset="hiro">
+
+    <!-- Klick-Button -->
+    <a-plane
+      position="0 0.5 0"
+      rotation="-90 0 0"
+      width="1.6"
+      height="0.6"
+      color="#1976D2"
+      class="clickable"
+      onclick="window.open('https://DEIN-LINK-HIER', '_blank')">
+
+      <a-text
+        value="▶ Medium öffnen"
+        align="center"
+        color="white"
+        width="3"
+        position="0 0 0.1">
+      </a-text>
+
+    </a-plane>
+
+  </a-marker>
+
+  <a-entity camera></a-entity>
+</a-scene>
+
+<div id="hinweis">
+  📷 Marker scannen → Button antippen
+</div>
+
+</body>
+</html>
