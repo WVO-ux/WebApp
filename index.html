@@ -11,21 +11,21 @@
       <a-marker preset="hiro">
         
         <a-plane 
-          id="meinButton"
+          id="videoButton"
           class="clickable"
           position="0 0.5 0" 
           rotation="-90 0 0" 
-          width="1.5" height="0.5" 
-          color="#EF2D5E"
-          onclick="window.location.href='DEIN_LINK_HIER.html'">
+          width="2" height="0.6" 
+          color="#FF0000"
+          onclick="window.open('https://www.youtube.com/watch?v=K7PrbjIkZFg', '_blank')">
           
-          <a-text value="Video oeffnen" align="center" position="0 0 0.1" color="white"></a-text>
+          <a-text value="Video: Titration" align="center" position="0 0 0.1" color="white" width="4"></a-text>
         </a-plane>
 
       </a-marker>
 
       <a-entity camera>
-        <a-cursor raycaster="objects: .clickable"></a-cursor>
+        <a-cursor raycaster="objects: .clickable" material="color: yellow; shader: flat"></a-cursor>
       </a-entity>
       
     </a-scene>
